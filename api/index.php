@@ -1,11 +1,11 @@
 <?php
 
-    require 'config/config.php'; //database connection
+    require '../config/config.php'; //database connection
 
-    $paramCode = $_REQUEST['paramCode']; //paramCode variable
+    $paramCode = isset($_REQUEST['paramCode']); //paramCode variable
 
     //initialize response array
-    $response = new array(
+    $response =  array(
                             "success" => 0, //1 = successed or 0 = failed
                             "message" => "Initial Message" //response message
                          );
