@@ -1,0 +1,385 @@
+/* APP LIBRARIES */
+.label-gray{
+	color: #534e48;
+}
+.no-margin{
+	margin: 0;
+}
+.orange-label{
+	color: #F9901D;
+}
+button.submit-btn {
+    background-color: #F9901D;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    border: 0;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 6px;
+}
+button.submit-btn:hover {
+    background-color: #FAA64A;
+}
+/* END */
+/* CUSTOM STYLE */
+.logo img {
+    width: 250px;
+}
+header .topbar {
+    width: 100%;
+    height: 60px;
+    background-color: #F9901D;
+}
+.copyright {
+	position: fixed;
+    bottom: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 240px;
+}
+.active{
+	text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+.topbar input {
+    float: right;
+    margin: 15px;
+}
+.title h1 {
+    background-color: #F9901D;
+    display: table;
+    padding: 10px 27px;
+    font-weight: 700;
+    font-size: 26px;
+}
+.login-container {
+    overflow: hidden;
+}
+.login-content {
+    width: 260px;
+    padding: 20px;
+    display: table;
+    float: right;
+    background-color: #f4f1e2;
+    border-radius: 12px;
+}
+.login-content label {
+    font-weight: 500;
+    margin: 10px 0 0;
+    color: #707362;
+}
+span.frm-title {
+    font-size: 25px;
+    position: relative;
+    color: #F9901D;
+}
+.login-content input {
+    width: 100%;
+}
+.login-content input.submit-btn {
+    width: 45px;
+    position: relative;
+    float: right;
+    bottom: 26px;
+    background-color: #F9901D;
+    color: #fff;
+    border: none;
+    padding: 3px;
+}
+span.signup {
+    width: 220px;
+    display: block;
+    font-size: 14px;
+    margin: 6px 0;
+    text-align: center;
+    position: absolute;
+    color: #aaa69d;
+}
+.banner-holder {
+    background-color: #fbf2e9;
+    height: 230px;
+    border-radius: 6px;
+}
+.details-container {
+    width: auto;
+    display: table;
+    position: relative;
+    top: 100px;
+	margin: 0 30px 0;
+}
+.circular--landscape {
+	display: inline-block;
+    position: relative;
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+    float: left;
+    border-radius: 50%;
+}
+.circular--landscape img {
+	width: auto;
+    height: 100%;
+    margin-left: -25px;
+}
+.prof-details {
+    width: 130px;
+    float: left;
+    position: relative;
+    top: 50px;
+    margin-left: 40px;
+}
+.personal-info {
+    position: relative;
+    top: 60px;
+    float: right;
+    width: 70%;
+}
+.personal-info h1 {
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.personal-info h2 {
+    font-weight: 700;
+}
+.personal-details {
+    margin-left: 30px;
+}
+.personal-details p {
+    margin: 0;
+    font-size: 18px;
+}
+.members-details p {
+    margin: 0;
+    font-size: 18px;
+}
+.user-label {
+    position: absolute;
+    display: table;
+    margin: 20px;
+}
+.user-label span {
+    color: #fff;
+    font-weight: 700;
+}
+.members-container {
+    display: table;
+    width: 60%;
+    float: right;
+}
+.members-container .personal-info {
+    width: 60%;
+	top: 0;
+}
+.members-container .circular--landscape {
+    top: 40px;
+    left: 60px;
+}
+.members-list-container {
+    height: 100vh;
+    background-color: #eee2e2;
+    width: 380px;
+    position: absolute;
+}
+.list-content h1 {
+    text-align: center;
+    font-weight: 700;
+}
+.members-list-container {
+    height: 100vh;
+    background-color: #eee2e2;
+    width: 280px;
+    position: absolute;
+    left: -20px;
+    top: 40px;
+}
+.list-content ul {
+    padding: 0;
+}
+.list-content ul li {
+    display: block;
+    font-size: 22px;
+	text-indent: 50px;
+    line-height: 40px;
+}
+.list-content li.active-list {
+    background-color: #efb06b;
+}
+.loan-info {
+    width: 100%;
+}
+.loan-info-details {
+    float: right;
+    width: 75%;
+}
+.loan-info-details h1 {
+    text-align: center;
+    color: #F9901D;
+	font-weight: 600;
+}
+.loan-info-details h2 {
+    color: #F9901D;
+    font-weight: 600;
+    display: table;
+    float: left;
+}
+ul.info-label {
+    display: table;
+    padding: 0;
+    width: 100%;
+	margin: 0;
+}
+.loan-info-details ul.info-label li {
+	display: inline;
+    font-size: 20px;
+    font-weight: 600;
+    float: left;
+    width: 315px;
+}
+.loan-info-details ul.info-label li:last-child {
+	width: 120px;
+}
+ul.info-label li p {
+	font-size: 12px;
+    position: relative;
+    top: -5px;
+    display: table;
+	color: #b7acb0;
+    font-weight: 100;
+}
+ul.info-label li p span {
+    color: #333;
+    font-weight: 600;
+}
+.loan-emp-title {
+    display: table;
+    margin: 22px 0;
+    font-size: 15px;
+    width: 500px;
+    float: right;
+    color: #333;
+    font-weight: 600;
+}
+.loan-emp-title form input {
+    width: 160px;
+}
+.loan-info-logs table {
+    width: 100%;
+}
+.loan-info-logs table tr:nth-child(odd){ background-color:#fff; }
+.loan-info-logs table tr:nth-child(even){ background-color:#EFB06B; }
+.loan-info-logs table thead tr:nth-child(odd){ background-color:#EFB06B; }
+
+button.upcoming-btn {
+    background-color: #F9901D;
+    padding: 10px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    border: 0;
+    margin-top: 10px;
+}
+button.upcoming-btn:hover {
+    background-color: #FAA64A;
+}
+.call, .mail {
+    width: 45%;
+    float: left;
+    text-align: center;
+}
+.call p, .mail p {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.call img {
+    width: 143px;
+}
+.contact-icons {
+    margin-top: 70px;
+    display: table;
+    width: 100%;
+}
+.app-content-header {
+    width: 100%;
+    display: table;
+}
+h1.application-label {
+    background-color: #e5e4df;
+    display: table;
+    padding: 15px 35px;
+    position: relative;
+    left: -50px;
+    float: left;
+}
+.app-form {
+	background-color: #fff8f0;
+    padding: 10px 45px 10px 10px;
+    float: right;
+    display: block;
+    position: relative;
+    width: 355px;
+	left: 50px;
+    margin-top: 20px;
+}
+.dl-form {
+    font-size: 18px;
+	text-align: right;
+}
+.dl-form a {
+    position: relative;
+    top: 2px;
+}
+.app-form-container h1 {
+    margin: 0 auto;
+    width: 650px;
+    padding: 25px;
+}
+.app-form-container {
+    margin-top: 20px;
+}
+.details-label {
+    width: 125px;
+    font-size: 18px;
+    float: left;
+}
+.details-label label {
+    display: block;
+	margin: 15px;
+}
+.details-input {
+    display: table;
+    position: relative;
+    top: 12px;
+    padding-left: 15px;
+}
+.details-input input {
+    display: block;
+    margin-bottom: 15px;
+    width: 270px;
+    position: relative;
+}
+.details-input select{
+    display: block;
+    margin-bottom: 15px;
+    top: -1px;
+	width: 112px;
+    height: 25px;
+	float: left;
+}
+span.age {
+    float: left;
+    margin-left: 10px;
+}
+span.age label {
+    float: left;
+    padding: 2px;
+}
+.container-btn {
+    width: 285px;
+    display: table;
+    text-align: right;
+}
