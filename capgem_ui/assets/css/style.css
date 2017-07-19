@@ -45,9 +45,21 @@ header .topbar {
     color: #fff;
     background: rgba(255,255,255,0.2);
 }
-.topbar input {
+.topbar input, .topbar .message {
     float: right;
     margin: 15px;
+}
+.message-container {
+    display: table;
+    float: right;
+    height: 100%;
+}
+.message-container-active {
+    background: #fab260;
+}
+.message {
+    font-size: 26px;
+    color: #fff;
 }
 .title h1 {
     background-color: #F9901D;
@@ -382,4 +394,77 @@ span.age label {
     width: 285px;
     display: table;
     text-align: right;
+}
+.req-title{
+	background-color: #fa8e22;
+    padding: 10px 15px;
+    display: table;
+    color: #fff;
+    font-size: 30px;
+}
+.req-content-container {
+    padding-top: 50px;
+    margin-left: 30px;
+    position: relative;
+    top: -50px;
+    z-index: -1;
+}
+.pending-list, .req-content-container{
+	background-color: #fbf2e9;
+}
+table.table-members {
+    width: 100%;
+    font-size: 22px;
+    margin-top: 40px;
+	margin-bottom: 40px;
+}
+.pending-list h3 {
+    font-weight: 700;
+}
+.table-members tr td a {
+    padding: 2px;
+}
+.table-members tr td .remove {
+    color: #e94440;
+}
+.table-members tr td .approve {
+    color: #95d006;
+}
+.personal-information, .loan-information {
+    height: 220px;
+}
+.personal-information label, .loan-information label {
+    background-color: #aee12a;
+    display: table;
+    padding-left: 25px;
+    padding-right: 16px;
+    color: #fff;
+    width: 190px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+button.btn-approved {
+    background-color: #00b701;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+}
+button.btn-rejected {
+    background-color: #e80c00;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+}
+.action-container button {
+    margin-bottom: 15px;
+}
+.action-container {
+    position: relative;
+    top: 80px;
 }
