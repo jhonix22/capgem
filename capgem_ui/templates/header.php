@@ -28,7 +28,7 @@
                     <a href="<?php echo $url->site_url('index.php?p=contacts');?>" class="<?= ($p == 'contacts') ? 'active':''; ?>">Contacts</a>
                 </li>
                 <li>
-                    <a href="<?php echo $url->site_url('index.php?p=apply');?>" class="<?= ($p == 'contacts') ? 'active':''; ?>">Apply Now</a>
+                    <a href="<?php echo $url->site_url('index.php?p=apply');?>" class="<?= ($p == 'apply') ? 'active':''; ?>">Apply Now</a>
                 </li>
                 <li>
                     <a href="javascript:void(0);" class="">Log Out</a>
@@ -49,5 +49,10 @@
 				}
 			?>
 				<input type="text" placeholder="Search">
+				<div class="<?= ($p == 'accounts') ? 'message-container-active':''; ?> message-container">
+					<a href="<?php echo $url->site_url('index.php?p=accounts');?>">
+						<div class="message glyphicon glyphicon-envelope"></div>
+					</a>
+				</div>
 			</div>
 		</header>
