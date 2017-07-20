@@ -10,7 +10,14 @@
                     <a href="<?php echo $url->site_url('');?>" class="<?= ($p == '') ? 'active':''; ?>">Home</a>
                 </li>
                 <li>
-                    <a href="<?php echo $url->site_url('index.php?p=profile');?>" class="<?= ($p == 'profile') ? 'active':''; ?>">Profile</a>
+                     <?php
+                        if(!empty($_SESSION['user_id'])){
+                            ?>
+                                <a href="<?php echo $url->site_url('index.php?p=profile');?>" class="<?= ($p == 'profile') ? 'active':''; ?>">Profile</a>
+                            <?php
+                        }
+                    ?> 
+                    
                 </li>
                 <li>
                     <a href="<?php echo $url->site_url('index.php?p=members');?>" class="<?= ($p == 'members') ? 'active':''; ?>">Members</a>
@@ -31,7 +38,13 @@
                     <a href="<?php echo $url->site_url('index.php?p=apply');?>" class="<?= ($p == 'apply') ? 'active':''; ?>">Apply Now</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" class="">Log Out</a>
+                    <?php
+                        if(!empty($_SESSION['user_id'])){
+                            ?>
+                                <a href="javascript:void(0);" class="">Log Out</a>
+                            <?php
+                        }
+                    ?> 
                 </li>
             </ul>
 			<div class="copyright">Capgem &copy; Copyright <?php echo date("Y");?></div>
