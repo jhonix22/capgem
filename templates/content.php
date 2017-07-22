@@ -1,9 +1,10 @@
-<?php if(empty($_SESSION)): ?>
+<?php if(empty($_SESSION['user_id'])): ?>
     <div class="login-container">
         <div class="login-content">
 
             <form method="POST" action="?action=login" class="">
-                <span class="frm-title">Login</span>
+                <span class="frm-title">Login</span><br>
+                <span class="text-danger"><?php echo (!empty($_SESSION['error'])) ? $_SESSION['error']: '';?></span>
                 <div class="input-cnt">
                     <label>Username</label>
                     <input type="text" name="username" class="">

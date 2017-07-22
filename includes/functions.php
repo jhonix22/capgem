@@ -73,7 +73,7 @@ class Capgem {
                 $_SESSION[$key] = $value;
             endforeach;
         }else{
-            echo '<script>alert("User not found!");</script>';
+            $_SESSION['error'] = 'User not Found!';
         }
         header('Location: index.php');
     }

@@ -11,7 +11,7 @@
                 </li>
                 <li>
                      <?php
-                        if(!empty($_SESSION)):
+                        if(!empty($_SESSION['user_id'])):
                             ?>
                                 <a href="<?php echo $url->site_url('?p=profile&user_id='.$_SESSION['user_id']);?>" class="<?= ($p == 'profile') ? 'active':''; ?>">Profile</a>
                             <?php
@@ -20,7 +20,7 @@
                     
                 </li>
                 <?php
-                    if(!empty($_SESSION) && $_SESSION['access'] == "0"):
+                    if(!empty($_SESSION['user_id']) && $_SESSION['access'] == "0"):
                 ?>
                 <li>
                     <a href="<?php echo $url->site_url('?p=members');?>" class="<?= ($p == 'members') ? 'active':''; ?>">Members</a>
@@ -32,7 +32,7 @@
                 <?php
                     endif;
 
-                    if (!empty($_SESSION)):
+                    if (!empty($_SESSION['user_id'])):
                 ?>
                 <li>
                     <a href="<?php echo $url->site_url('?p=calendar');?>" class="<?= ($p == 'calendar') ? 'active':''; ?>">Calendar</a>
@@ -40,7 +40,7 @@
                 <?php
                     endif;
 
-                    if(!empty($_SESSION) && $_SESSION['access'] == '0'):
+                    if(!empty($_SESSION['user_id']) && $_SESSION['access'] == '0'):
                  ?>
                 <li>
                     <a href="<?php echo $url->site_url('?p=reports');?>" class="<?= ($p == 'reports') ? 'active':''; ?>">Reports</a>
@@ -48,7 +48,7 @@
                 <?php
                     endif;
 
-                    if(empty($_SESSION)):
+                    if(empty($_SESSION['user_id'])):
                 ?>
                 <li>
                     <a href="<?php echo $url->site_url('?p=contacts');?>" class="<?= ($p == 'contacts') ? 'active':''; ?>">Contacts</a>
@@ -61,7 +61,7 @@
                 ?>
                 <li>
                     <?php
-                        if(!empty($_SESSION)){
+                        if(!empty($_SESSION['user_id'])){
                             ?>
                                 <a href="?action=logout" class="">Log Out</a>
                             <?php
@@ -75,11 +75,11 @@
 		<header>
 			<div class="topbar">
 				<div class="user-label">
-					<span>Welcome <?php echo (!empty($_SESSION)) ? ($_SESSION['access'] == 0) ? 'Admin' : 'Clerk' : 'Guest'; ?></span>
+					<span>Welcome <?php echo (!empty($_SESSION['user_id'])) ? ($_SESSION['access'] == 0) ? 'Admin' : 'Clerk' : 'Guest'; ?></span>
 				</div>
 				<input type="text" placeholder="Search">
                 <?php
-                    if(!empty($_SESSION) && $_SESSION['access'] == '1'):
+                    if(!empty($_SESSION['user_id']) && $_SESSION['access'] == '1'):
                 ?>
 				<div class="<?= ($p == 'accounts') ? 'message-container-active':''; ?> message-container">
 					<a href="<?php echo $url->site_url('?p=accounts');?>">
