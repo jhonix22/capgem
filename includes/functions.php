@@ -12,7 +12,7 @@ class Dynamic_URL {
 		$url  = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
 		$url .= $_SERVER['SERVER_NAME'];
 		$url .= htmlspecialchars($_SERVER['PHP_SELF']);
-		$themeurl = dirname(dirname($url))  . "/capgem_ui/" . $inner_url;
+		$themeurl = dirname(dirname($url))  . "/capgem/" . $inner_url;
 
 		return $themeurl;
 	}
@@ -52,4 +52,38 @@ class Page_Title {
 }
 $title = new Page_Title();
 
+
+/*
+ * Capgem Class
+ * */
+class Capgem {
+
+	public $obj;
+
+    public function login($username, $password){
+        $this->obj = new Database("localhost","root","","capgem");
+
+        $col = ['user_id','access'];
+        $con = array('username' => $username, 'password'=> $password);
+
+        $result = $this->obj->select("tbl_user", $col, $con);
+
+        if(!empty($result)){
+            foreach($result[0] as $key => $value):
+                $_SESSION[$key] = $value;
+            endforeach;
+        }else{
+            echo '<script>alert("User not found!");</script>';
+        }
+        header('Location: index.php');
+    }
+
+    public function logout(){
+        session_destroy();
+
+        header('Location: index.php');
+    }
+}
+
+$capgem = new Capgem();
 ?>

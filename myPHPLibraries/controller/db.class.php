@@ -55,6 +55,26 @@ class Database{
 	}//End of function CreateTable
 
 
+	//Function select specific for LOGIN {table,returned columns, column conditions}
+	public function select($table, array $columns,array $conditions)
+    {
+        $i = 0;
+		foreach($conditions as $key=>$value){
+            $con[$i] = $key." = '".$value."'";
+            $i++;
+		}
+
+        $condi = implode(' AND ', $con);
+		$col = implode(', ',$columns);
+		$result = $this->connection->query("SELECT $col FROM $table WHERE $condi");
+
+		if ($this->connection->errno) {
+			die("Fail Select " . $this->connection->error);
+		}
+
+		//return tow dimentional array as required columns result
+		return $result->fetch_all(MYSQLI_ASSOC);
+	}//end function select
 
 	//Fetch data by accepting table name and columns(1 dimentional array) name
 	public function fetch($table, array $columns){
@@ -255,7 +275,7 @@ class Database{
 				echo "<script> window.location.href = 'index.php'; </script>";
 			}
 			else{
-				echo "The Record you want to updated is no loger exists";
+				echo "The Record you want to update is no loger exists";
 				echo '<a href="index.php"><< Back</a>';
 			}
 		}else{

@@ -31,9 +31,8 @@
 							</select>
 						</span>
 						<span class="age">
-							<label>Age: </label> <select name="age">
-									<option></option>
-								</select>
+							<label>Age: </label>
+							<input type="text" maxlength="2" style="width:50px;" name="age">
 						</span>
 						<input type="text" name="status"/>
 						<input type="text" name="occupation"/>

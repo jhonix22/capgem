@@ -1,20 +1,24 @@
-<div class="login-container">
-	<div class="login-content">
-		<form method="POST" action="" class="">
-			<span class="frm-title">Login</span>
-			<div class="input-cnt">
-				<label>Username</label>
-				<input type="text" class="">
-			</div>
-			<div class="input-cnt">
-				<label>Password</label>
-				<input type="text" class="">
-				<input type="submit" class="submit-btn" value="Go">
-				<span class="signup">Don't have an account? Sign Up</span>
-			</div>
-		</form>
-	</div>
-</div>
+<?php if(empty($_SESSION)): ?>
+    <div class="login-container">
+        <div class="login-content">
+
+            <form method="POST" action="?action=login" class="">
+                <span class="frm-title">Login</span>
+                <div class="input-cnt">
+                    <label>Username</label>
+                    <input type="text" name="username" class="">
+                </div>
+                <div class="input-cnt">
+                    <label>Password</label>
+                    <input type="password" name="password" class="">
+                    <input type="submit" class="submit-btn" value="Go">
+                    <span class="signup">Don't have an account? Sign Up</span>
+                </div>
+            </form>
+
+        </div>
+    </div>
+<?php endif; ?>
 <div class="title">
 	<h1>CAPGEM</h1>
 </div>

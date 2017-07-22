@@ -11,37 +11,59 @@
                 </li>
                 <li>
                      <?php
-                        if(!empty($_SESSION['user_id'])){
+                        if(!empty($_SESSION)):
                             ?>
-                                <a href="<?php echo $url->site_url('index.php?p=profile');?>" class="<?= ($p == 'profile') ? 'active':''; ?>">Profile</a>
+                                <a href="<?php echo $url->site_url('?p=profile&user_id='.$_SESSION['user_id']);?>" class="<?= ($p == 'profile') ? 'active':''; ?>">Profile</a>
                             <?php
-                        }
+                        endif;
                     ?> 
                     
                 </li>
+                <?php
+                    if(!empty($_SESSION) && $_SESSION['access'] == "0"):
+                ?>
                 <li>
-                    <a href="<?php echo $url->site_url('index.php?p=members');?>" class="<?= ($p == 'members') ? 'active':''; ?>">Members</a>
+                    <a href="<?php echo $url->site_url('?p=members');?>" class="<?= ($p == 'members') ? 'active':''; ?>">Members</a>
                 </li>
                 <li>
-                    <a href="<?php echo $url->site_url('index.php?p=employees');?>" class="<?= ($p == 'employees') ? 'active':''; ?>">Employees</a>
+                    <a href="<?php echo $url->site_url('?p=employees');?>" class="<?= ($p == 'employees') ? 'active':''; ?>">Employees</a>
+                </li>
+
+                <?php
+                    endif;
+
+                    if (!empty($_SESSION)):
+                ?>
+                <li>
+                    <a href="<?php echo $url->site_url('?p=calendar');?>" class="<?= ($p == 'calendar') ? 'active':''; ?>">Calendar</a>
+                </li>
+                <?php
+                    endif;
+
+                    if(!empty($_SESSION) && $_SESSION['access'] == '0'):
+                 ?>
+                <li>
+                    <a href="<?php echo $url->site_url('?p=reports');?>" class="<?= ($p == 'reports') ? 'active':''; ?>">Reports</a>
+                </li>
+                <?php
+                    endif;
+
+                    if(empty($_SESSION)):
+                ?>
+                <li>
+                    <a href="<?php echo $url->site_url('?p=contacts');?>" class="<?= ($p == 'contacts') ? 'active':''; ?>">Contacts</a>
                 </li>
                 <li>
-                    <a href="<?php echo $url->site_url('index.php?p=calendar');?>" class="<?= ($p == 'calendar') ? 'active':''; ?>">Calendar</a>
+                    <a href="<?php echo $url->site_url('?p=apply');?>" class="<?= ($p == 'apply') ? 'active':''; ?>">Apply Now</a>
                 </li>
-                <li>
-                    <a href="<?php echo $url->site_url('index.php?p=reports');?>" class="<?= ($p == 'reports') ? 'active':''; ?>">Reports</a>
-                </li>
-                <li>
-                    <a href="<?php echo $url->site_url('index.php?p=contacts');?>" class="<?= ($p == 'contacts') ? 'active':''; ?>">Contacts</a>
-                </li>
-                <li>
-                    <a href="<?php echo $url->site_url('index.php?p=apply');?>" class="<?= ($p == 'apply') ? 'active':''; ?>">Apply Now</a>
-                </li>
+                <?php
+                    endif;
+                ?>
                 <li>
                     <?php
-                        if(!empty($_SESSION['user_id'])){
+                        if(!empty($_SESSION)){
                             ?>
-                                <a href="javascript:void(0);" class="">Log Out</a>
+                                <a href="?action=logout" class="">Log Out</a>
                             <?php
                         }
                     ?> 
@@ -52,20 +74,18 @@
         <!-- /#sidebar-wrapper -->
 		<header>
 			<div class="topbar">
-			<?php
-				if($p != ''){
-			?>
 				<div class="user-label">
-					<span>Welcome Admin</span>
+					<span>Welcome <?php echo (!empty($_SESSION)) ? ($_SESSION['access'] == 0) ? 'Admin' : 'Clerk' : 'Guest'; ?></span>
 				</div>
-			<?php
-				}
-			?>
 				<input type="text" placeholder="Search">
+                <?php
+                    if(!empty($_SESSION) && $_SESSION['access'] == '1'):
+                ?>
 				<div class="<?= ($p == 'accounts') ? 'message-container-active':''; ?> message-container">
-					<a href="<?php echo $url->site_url('index.php?p=accounts');?>">
+					<a href="<?php echo $url->site_url('?p=accounts');?>">
 						<div class="message glyphicon glyphicon-envelope"></div>
 					</a>
 				</div>
+                <?php endif; ?>
 			</div>
 		</header>

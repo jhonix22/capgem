@@ -1,6 +1,13 @@
 <?php
 $p = (isset($_GET['p']) && $_GET['p'] != '') ? $_GET['p'] : '';
-include 'includes/functions.php';
+$action = (!empty($_GET['action'])) ? $_GET['action'] : '';
+include 'config/config.php';
+if(!empty($action)):
+    switch($action){
+        case 'login':  $capgem->login($_POST['username'], $_POST['password']); break;
+        case 'logout': $capgem->logout(); break;
+    }
+endif;
 if(!defined('BASEPATH')) { die('No direct script access'); }
 ?>
 <!DOCTYPE html>
