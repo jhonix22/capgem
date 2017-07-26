@@ -1,5 +1,5 @@
 <?php
-// Assign table name
+/* // Assign table name
 $prod = "tbl_product";
 $supplier = "tbl_supplier";
 $category = "tbl_category";
@@ -112,5 +112,5 @@ $obj->CreateTable($un);
 $obj->CreateTable($userLvl);
 $obj->CreateTable($user);
 $obj->CreateTable($transaction);
-$obj->CreateTable($order);
+$obj->CreateTable($order); */
 ?>

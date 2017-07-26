@@ -79,6 +79,9 @@ if(!defined('BASEPATH')) { die('No direct script access'); }
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/js/bootstrap.min.js"></script>
 	
+    <!-- Custom JavaScript -->
+    <script src="assets/js/admin.js"></script>
+	
 	
 	<script src='assets/js/lib/moment.min.js'></script>
 	<script src='assets/js/fullcalendar.min.js'></script>

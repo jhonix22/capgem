@@ -56,6 +56,9 @@
                 <li>
                     <a href="<?php echo $url->site_url('?p=apply');?>" class="<?= ($p == 'apply') ? 'active':''; ?>">Apply Now</a>
                 </li>
+                <li>
+                    <a href="<?php echo $url->site_url('?p=register');?>" class="<?= ($p == 'register') ? 'active':''; ?>">Register Now</a>
+                </li>
                 <?php
                     endif;
                 ?>
