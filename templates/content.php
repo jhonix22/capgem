@@ -13,7 +13,7 @@
                     <label>Password</label>
                     <input type="password" name="password" class="">
                     <input type="submit" class="submit-btn" value="Go">
-                    <span class="signup">Don't have an account? Sign Up</span>
+                    <span class="signup">Don't have an account? <a href="<?php echo $url->site_url('?p=register');?>">Sign Up</a></span>
                 </div>
             </form>
 
