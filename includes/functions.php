@@ -63,7 +63,7 @@ class Capgem {
     public function login($username, $password){
         $this->obj = new Database("localhost","root","","capgem");
 
-        $col = ['user_id','access'];
+        $col = ['user_id','access','verified'];
         $con = array('username' => $username, 'password'=> $password);
 
         $result = $this->obj->select("tbl_user", $col, $con);
@@ -75,7 +75,14 @@ class Capgem {
         }else{
             $_SESSION['error'] = 'User not Found!';
         }
-        header('Location: index.php');
+
+		if(!empty($_SESSION['user_id']) && ($_SESSION['access'] == 2) && ($_SESSION['verified'] == 0) ){
+			unset($_SESSION['user_id']);
+			unset($_SESSION['access']);
+			unset($_SESSION['verified']);
+        	$_SESSION['error'] = 'User not verified. Please check your email upon registration!';
+		}
+		header('Location: index.php');
     }
 
     public function logout(){
