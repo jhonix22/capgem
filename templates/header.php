@@ -53,12 +53,13 @@
                 <li>
                     <a href="<?php echo $url->site_url('?p=contacts');?>" class="<?= ($p == 'contacts') ? 'active':''; ?>">Contacts</a>
                 </li>
-                <li>
-                    <a href="<?php echo $url->site_url('?p=apply');?>" class="<?= ($p == 'apply') ? 'active':''; ?>">Apply Now</a>
-                </li>
-                <!--<li>
-                    <a href="<?php echo $url->site_url('?p=register');?>" class="<?= ($p == 'register') ? 'active':''; ?>">Register Now</a>
-                </li>-->
+                <?php
+                    endif;
+                    if(!empty($_SESSION['user_id']) && $_SESSION['access'] == 2):
+                ?>
+                        <li>
+                            <a href="<?php echo $url->site_url('?p=apply');?>" class="<?= ($p == 'apply') ? 'active':''; ?>">Apply Now</a>
+                        </li>
                 <?php
                     endif;
                 ?>

@@ -18,7 +18,7 @@
 					  </div>
 					  <div class="form-group">
 						<label for="cpass">Confirm Password:</label>
-						<input type="email" class="form-control" id="cpass">
+						<input type="password" class="form-control" id="cpass">
 					  </div>
 					  <div class="form-group">
 						<label for="fname">Fullname:</label>
