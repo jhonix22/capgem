@@ -79,7 +79,7 @@
 		<header>
 			<div class="topbar">
 				<div class="user-label">
-					<span>Welcome <?php echo (!empty($_SESSION['user_id'])) ? ($_SESSION['access'] == 0) ? 'Admin' : 'Clerk' : 'Guest'; ?></span>
+					<span>Welcome <?php echo (!empty($_SESSION['user_id'])) ? ($_SESSION['access'] == 0) ? 'Admin' : '' : 'Guest'; ?></span>
 				</div>
 				<input type="text" placeholder="Search">
                 <?php
