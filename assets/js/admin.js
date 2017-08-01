@@ -32,4 +32,16 @@ $(document).ready( function() {
 		$("#imgInp").change(function(){
 		    readURL(this);
 		}); 	
+		
+		$("#cpass").on("keyup", function(){
+			if($(this).val() === $("#pwd").val()){
+				$(".errorpass").text("Password matched!").addClass("text-success").removeClass("hide text-danger");
+				$(".submit-reg").removeAttr("disabled");
+				$(this).css("border-color","");
+			}else{
+				$(".errorpass").text("Password matched error!").addClass("text-danger").removeClass("hide");
+				$(".submit-reg").attr("disabled","disabled");
+				$(this).css("border-color","red");
+			}
+		});
 	});

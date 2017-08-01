@@ -21,7 +21,7 @@ if(!defined('BASEPATH')) { die('No direct script access'); }
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo ($p != '') ? ucfirst($p) : 'Home'.' - Capgem'; ?></title>
+    <title><?php echo ($p != '') ? ucfirst($p).' - Capgem' : 'Home'.' - Capgem'; ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">

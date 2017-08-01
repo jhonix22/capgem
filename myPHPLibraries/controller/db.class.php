@@ -247,7 +247,7 @@ class Database{
 
 
 	//Update data within table; Accepting Table Name and Keys=>Values as associative array
-	public function update($tblname, array $set_val_cols, array $cod_val_cols){
+	public function update($tblname, array $set_val_cols, array $cod_val_cols, $messages){
 		
 		//append set_val_cols associative array elements 
 		$i=0;
@@ -271,12 +271,12 @@ class Database{
 		// echo "UPDATE $tblname SET $Stset WHERE $Stcod";
 		if($this->connection->query("UPDATE $tblname SET $Stset WHERE $Stcod") === TRUE){
 			if(mysqli_affected_rows($this->connection)){
-				echo "<script> alert('Record updated successfully'); </script>";
+				echo "<script> alert('{$messages}'); </script>";
 				echo "<script> window.location.href = 'index.php'; </script>";
 			}
 			else{
-				echo "The Record you want to update is no loger exists";
-				echo '<a href="index.php"><< Back</a>';
+				echo "<script> alert('The Record you want to be verify is no loger exists'); </script>";
+				echo "<script> window.location.href = 'index.php'; </script>";
 			}
 		}else{
 			echo "Error to update".$this->connection->error;

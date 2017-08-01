@@ -7,45 +7,46 @@
 			<h1 class="orange-label">Personal Information</h1>
 			<div class="app-form-details">
 				<div class="col-md-6">
-					<form>
+					<form method="POST" action="templates/register/process.php">
 					  <div class="form-group">
 						<label for="username">Username:</label>
-						<input type="text" class="form-control" id="username">
+						<input type="text" class="form-control" id="username" name="username">
 					  </div>
 					  <div class="form-group">
 						<label for="pwd">Password:</label>
-						<input type="password" class="form-control" id="pwd">
+						<input type="password" class="form-control" id="pwd" name="password">
 					  </div>
 					  <div class="form-group">
 						<label for="cpass">Confirm Password:</label>
 						<input type="password" class="form-control" id="cpass">
+						<i class="hide errorpass">Password matched error!</i>
 					  </div>
 					  <div class="form-group">
 						<label for="fname">Fullname:</label>
-						<input type="text" class="form-control" id="fname">
+						<input type="text" class="form-control" id="fname" name="fullname">
 					  </div>
 					  <div class="form-group">
 						<label for="gender">Gender:</label>
-						<select class="form-control" id="fname">
+						<select class="form-control" id="gender" name="gender">
 							<option>Male</option>
 							<option>Female</option>
 						</select>
 					  </div>
 					  <div class="form-group">
 						<label for="address">Address:</label>
-						<input type="text" class="form-control" id="address">
+						<input type="text" class="form-control" id="address" name="address">
 					  </div>
 					  <div class="form-group">
 						<label for="email">Email:</label>
-						<input type="email" class="form-control" id="email">
+						<input type="email" class="form-control" id="email" name="email">
 					  </div>
 					  <div class="form-group">
 						<label for="dob">Date of Birth:</label>
-						<input type="date" class="form-control" id="dob">
+						<input type="date" class="form-control" id="dob" name="dob">
 					  </div>
 					  <div class="form-group">
 						<label for="spouse">Spouse Full Name:</label>
-						<input type="text" class="form-control" id="spouse">
+						<input type="text" class="form-control" id="spouse" name="spouse">
 					  </div>
 					  <div class="form-group">
 						<label>Profile Image:</label>
@@ -55,11 +56,11 @@
 									Browse… <input type="file" id="imgInp">
 								</span>
 							</span>
-							<input type="text" class="form-control" readonly>
+							<input type="text" class="form-control" readonly name="pp">
 						</div>
 						<img id='img-upload'/>
 					 </div>
-					  <button type="submit" class="btn btn-warning">Submit</button>
+					  <input type="submit" class="btn btn-warning submit-reg" name="submit" value="Submit" disabled/>
 					</form>
 				</div>
 			</div>
