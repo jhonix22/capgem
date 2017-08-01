@@ -100,7 +100,7 @@ if(!defined('BASEPATH')) { die('No direct script access'); }
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 			events: [
-				{
+				/*{
 					title: 'All Day Event',
 					start: '2017-05-01'
 				},
@@ -153,7 +153,7 @@ if(!defined('BASEPATH')) { die('No direct script access'); }
 					title: 'Click for Google',
 					url: 'http://google.com/',
 					start: '2017-05-28'
-				}
+				}*/
 			]
 		});
 		
