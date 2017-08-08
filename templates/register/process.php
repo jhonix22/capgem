@@ -69,6 +69,8 @@ require("phpmailer/PHPMailer/class.phpmailer.php");
 				$InsColumnVal = array("user_id"=>$id,"memName"=>$_POST["fullname"],"memGender"=>$_POST["gender"],"memAddress"=>$_POST["address"],"memEmail"=>$_POST["email"],"memBirtdate"=>$_POST["dob"],"memSpouse"=>$_POST["spouse"],"memPicture"=>$_POST["pp"]);
 				//Call insert function to insert record
 				$obj->insert("tbl_members", $InsColumnVal, "../../?p=register", 'Registration successfully save. please check your email for verification! Thank you', '', 'true');
+				
+				move_uploaded_file($_FILES["file"]["tmp_name"], "../../assets/img/" . $_FILES["file"]["name"]);
 			}
 	}
 ?>

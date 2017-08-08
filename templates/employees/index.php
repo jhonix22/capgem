@@ -23,10 +23,10 @@
 		<div class="list-content">
 			<h1>Employee List</h1>
 			<ul>
-				<li class="active-list">Noel Aldwin Yanes</li>
-				<li>Clariville Malunes</li>
-				<li>Audrey Lachica</li>
-				<li>Maeve Dulaca</li>
+				<li class="active-list"><a>Noel Aldwin Yanes</a></li>
+				<li><a>Clariville Malunes</a></li>
+				<li><a>Audrey Lachica</a></li>
+				<li><a>Maeve Dulaca</a></li>
 			</ul>
 		</div>
 	</div>
@@ -35,8 +35,8 @@
 			<h2>Members Handled</h2>
 			<div class="loan-emp-title">
 				<form method="POST">
-					Date From: <input type="text" name="datefrom"/>
-					Date To: <input type="text" name="dateto"/>
+					Date From: <input type="date" name="datefrom"/>
+					Date To: <input type="date" name="dateto"/>
 				</form>
 			</div>
 			<div class="loan-info-logs">

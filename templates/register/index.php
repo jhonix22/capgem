@@ -7,7 +7,7 @@
 			<h1 class="orange-label">Personal Information</h1>
 			<div class="app-form-details">
 				<div class="col-md-6">
-					<form method="POST" action="templates/register/process.php">
+					<form method="POST" action="templates/register/process.php" enctype="multipart/form-data">
 					  <div class="form-group">
 						<label for="username">Username:</label>
 						<input type="text" class="form-control" id="username" name="username">
@@ -53,7 +53,7 @@
 						<div class="input-group">
 							<span class="input-group-btn">
 								<span class="btn btn-default btn-file">
-									Browse… <input type="file" id="imgInp">
+									Browse… <input type="file" id="imgInp" name="file">
 								</span>
 							</span>
 							<input type="text" class="form-control" readonly name="pp">

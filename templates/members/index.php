@@ -1,21 +1,52 @@
+<?php
+$getUser = array("*");
+$viewUser = $obj->read("tbl_user", $getUser, "access", "2");
+?>
 <div class="profile-content">
 	<div class="col-md-12">
 		<div class="banner-holder">
 			<div class="members-container">
-				<div class="circular--landscape">
-					<img src="assets/img/pic.png"/>
-				</div>
-				<div class="personal-info">
-					<h2>Personal Information</h2>
-					<div class="members-details">
-						<p>First Name: Noel Aldwin</p>
-						<p>Last Name: Yanes</p>
-						<p>Gender: Male</p>
-						<p>Status: Single</p>
-						<p>Occupation: None</p>
-						<p>Contact #: 09123456789</p>
+				<?php
+					if(isset($_GET["u"])){
+						$listMember = array("*");
+						$viewListMem = $obj->read("tbl_members", $listMember, "user_id", json_decode( base64_decode($_GET["u"])));
+							foreach($viewListMem as $key=>$value){
+							?>
+								<div class="circular--landscape">
+									<img src="assets/img/<?=$value["memPicture"];?>"/>
+								</div>
+								<div class="personal-info">
+									<h2>Personal Information</h2>
+										<div class="members-details">
+											<p>Full Name: <?=ucfirst($value["memName"]);?></p>
+											<p>Gender: <?=strtoupper($value["memGender"]);?></p>
+											<p>Address: <?=$value["memAddress"];?></p>
+											<p>Birth Date: <?=date("M d, Y",strtotime($value["memBirtdate"]));?></p>
+											<p>Spouse: <?=ucfirst($value["memSpouse"]);?></p>
+											<p>Email: <?=$value["memEmail"];?></p>
+										</div>
+								</div>
+							<?php
+							}
+					}else{
+				?>
+					<div class="circular--landscape">
+						<img src="assets/img/avatar.png"/>
 					</div>
-				</div>
+					<div class="personal-info">
+						<h2>Personal Information</h2>
+							<div class="members-details">
+								<p>First Name: --</p>
+								<p>Last Name: --</p>
+								<p>Gender: --</p>
+								<p>Status: --</p>
+								<p>Occupation: --</p>
+								<p>Contact #: --</p>
+							</div>
+					</div>
+				<?php
+					}
+				?>
 			</div>
 		</div>
 	</div>
@@ -23,10 +54,17 @@
 		<div class="list-content">
 			<h1>Member List</h1>
 			<ul>
-				<li class="active-list">Noel Aldwin Yanes</li>
-				<li>Clariville Malunes</li>
-				<li>Audrey Lachica</li>
-				<li>Maeve Dulaca</li>
+			<?php
+			foreach($viewUser as $idKey=>$idValue){
+			$getMember = array("*");
+			$viewMem = $obj->read("tbl_members", $getMember, "user_id", $idValue["user_id"]);
+				foreach($viewMem as $key=>$value){
+				?>
+					<li class="<?= (isset($_GET["u"]) && json_decode( base64_decode($_GET["u"])) == $idValue["user_id"]) ? 'active-list' : ''; ?>"><a href="<?php echo $url->site_url('?p=members&u='.base64_encode( json_encode($idValue["user_id"])));?>"><?=ucfirst($value["memName"]);?></a></li>
+				<?php
+				}
+			}
+			?>
 			</ul>
 		</div>
 	</div>
